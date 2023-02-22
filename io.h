@@ -18,15 +18,19 @@ public:
     int get_method(){
         cout << "Введите 1 для ввода матрицы с консоли, \n 2 для ввода матрицы из файла \n 3 для генерации случайной матрицы" << endl;
         cin >> method;
+        if (method < 1 || in_size > 3){
+            cout << "Неверный параметр" << endl;
+            return NULL;
+        }
         return method;
     }
 
     int get_size(){
-        cout << "Введите количество строк квадратной матрицы" << endl;
+        cout << "Введите количество строк квадратной матрицы (от 2 до 20)" << endl;
         cin >> in_size;
         if (in_size < 2 || in_size > 20){
             cout << "Неверный параметр" << endl;
-            return 0;
+            return NULL;
         }
         return in_size;
     }

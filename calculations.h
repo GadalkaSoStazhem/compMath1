@@ -34,7 +34,10 @@ public:
                 matrix[i][j] = matrix[index][j];
                 matrix[index][j] = tmp;
             }
-
+            if (matrix[i][i] == 0){
+                cout << "Система не является совместной и определенной" << endl;
+                return;
+            }
             //rationing of the row with the max value
             for (int k = size; k >= i; k--)
                 if (matrix[i][i] != 0)
@@ -54,7 +57,7 @@ public:
         //x_i = (b_i - sum(a_ij * x_j) / a_ii;
         for (int i = size - 1; i >= 0; i--){
             double sum = 0;
-            for (int j = i + 1; j < size + 1; j++){
+            for (int j = i + 1; j < size; j++){
                 sum += matrix[i][j] * answers[j];
             }
             answers[i] = (matrix[i][size] - sum) / matrix[i][i];
@@ -95,6 +98,7 @@ private:
     double *answers;
     double *diffs;
     io out;
+
 };
 
 
