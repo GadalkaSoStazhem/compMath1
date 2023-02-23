@@ -35,7 +35,6 @@ public:
                 matrix[index][j] = tmp;
             }
             if (matrix[i][i] == 0){
-                cout << "Система не является совместной и определенной" << endl;
                 return;
             }
             //rationing of the row with the max value

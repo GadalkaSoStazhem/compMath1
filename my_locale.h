@@ -11,7 +11,6 @@ using namespace std;
 
 class my_locale : public numpunct<char> {
 public:
-
     char do_decimal_point() const {
         return ',';
     }
