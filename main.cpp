@@ -2,12 +2,13 @@
 #include "io.h"
 #include "my_locale.h"
 
+#include <ctime>
 #include <iostream>
 
 using namespace std;
 
 int main() {
-
+    clock_t begin = clock();
     locale out_comma (cout.getloc(), new my_locale);
     cout.imbue(out_comma);
     locale in_comma (cin.getloc(), new my_locale);
@@ -34,5 +35,8 @@ int main() {
             break;
         }
     }
+    double time = (clock() - begin) / (double) CLOCKS_PER_SEC;
+    cout << "Время работы программы: " << time << endl;
+
     return 0;
 }

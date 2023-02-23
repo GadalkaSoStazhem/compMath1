@@ -22,9 +22,9 @@ public:
 
     void file_input(){
         string number;
-        cout << "Введите номер файла от 1 до 8" << endl;
+        cout << "Введите номер файла от 1 до 9" << endl;
         cin >> number;
-        if (stoi(number) < 1 || stoi(number) > 8){
+        if (stoi(number) < 1 || stoi(number) > 9){
             cout << "Неправильный номер файла" << endl;
             exit(0);
         }
