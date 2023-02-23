@@ -10,6 +10,7 @@
 
 #include <cmath>
 #include <iostream>
+#include <locale>
 
 using namespace std;
 
@@ -18,7 +19,8 @@ public:
     int get_method(){
         cout << "Введите 1 для ввода матрицы с консоли, \n 2 для ввода матрицы из файла \n 3 для генерации случайной матрицы" << endl;
         cin >> method;
-        if (method < 1 || in_size > 3){
+
+        if (method < 1 || in_size > 3 || !isdigit(method)){
             cout << "Неверный параметр" << endl;
             return NULL;
         }
@@ -28,7 +30,7 @@ public:
     int get_size(){
         cout << "Введите количество строк квадратной матрицы (от 2 до 20)" << endl;
         cin >> in_size;
-        if (in_size < 2 || in_size > 20){
+        if (in_size < 2 || in_size > 20 || !isdigit(in_size)){
             cout << "Неверный параметр" << endl;
             return NULL;
         }
