@@ -83,7 +83,7 @@ public:
             cout << "Корни системы: " << endl;
             out.print_array(answers, size);
             double *diffs = differences(matrix, size, answers);
-            cout << "Столбец неувязок: " << endl;
+            cout << "Столбец невязок: " << endl;
             out.print_array(diffs, size);
             delete [] answers;
             delete [] diffs;
