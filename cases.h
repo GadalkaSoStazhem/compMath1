@@ -12,6 +12,8 @@ class cases {
 public:
     void console_input(){
         int size = in.get_size();
+        if (size == NULL)
+            return;
         double **arr = in.console(size);
         calc.get_triangle(arr, size);
         double det = calc.tr_determinant(arr, size);
@@ -41,6 +43,8 @@ public:
 
     void rand_input(){
         int size = in.get_size();
+        if (size == NULL)
+            return;
         double **arr = in.get_random(size);
         cout << "Матрица СЛАУ со случайными коэффициентами" << endl;
         in.print_matrix(arr, size);
