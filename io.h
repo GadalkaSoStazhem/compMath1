@@ -133,7 +133,7 @@ public:
 
     void print_array (double *arr, int size){
         for (int i = 0; i < size; i++){
-            cout << setw(7) << round(arr[i] * 1000) / 1000 << " ";
+            cout << setw(7) << i + 1 << ": " << arr[i] << " ";
         }
         cout << endl;
     }
